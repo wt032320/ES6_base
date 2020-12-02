@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // async 语法糖 声明在该函数中存在异步操作
+    async function  show () {
+      let a = 12
+      let b = 4
+      // await 语法糖 声明异步操作的位置
+      let data = await setTimeout(() => {
+        console.log(a + b + 10)
+      }, 3000)
+    }
+    show()
+  </script>
+</body>
+</html>

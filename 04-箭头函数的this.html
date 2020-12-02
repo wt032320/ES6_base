@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let json = {
+    //   a: 12,
+    //   fn: () => {
+    //     alert(this.a)
+    //   }
+    // }
+    class Json {
+      constructor () {
+        this.a = 12;
+        this.fn =  () => {
+          // 修正this
+          // 箭头函数的this指向的是当前声明它的环境
+          alert(this.a)
+        }
+      }
+    }
+
+    let json = new Json()
+    json.fn()
+  </script>
+</body>
+</html>

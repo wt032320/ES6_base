@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="a">
+  <input type="button" value="b">
+  <input type="button" value="c">
+
+  <script>
+    window.onload = function () {
+      let allBtn = document.getElementsByTagName('input')
+
+      // var 重复声明 不能限制修改，函数级
+      // let 防止重复声明，用来声明变量
+      // const 防止重复声明， 用来声明常量
+      //
+      // ES5的var的作用域是函数级
+      // ES6的let/const的作用域是块级
+      for (let i = 0; i < allBtn.length; i++) {
+        allBtn[i].onclick = function () {
+          alert(i)
+        }
+      }
+    }
+  </script>
+</body>
+</html>

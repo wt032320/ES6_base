@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ...作用
+    // 1.用于收集剩余的参数(必须作为形参的最后一个)
+    function show (a, b, ...c) {
+      console.log(a, b, c)
+    }
+    show(1, 2, 3, 5, 6, 7)
+
+    // 2.用于数组的展开
+    let arr = [4, 3, 2]
+    let arr1 = [1, 7, 8]
+    function show1 (a, b, c) {
+      alert(a + b + c)
+    }
+    show1(...arr)
+    console.log(...arr, ...arr1)
+
+    // 3.用于json的展开
+    let json = {a: 12, b: 14, c: 5}
+    let json1 = {
+      ...json,
+      d: 33
+    }
+    console.log(json1)
+  </script>
+</body>
+</html>

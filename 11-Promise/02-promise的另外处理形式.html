@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('hello vue.js')
+        // reject('error message')
+      }, 1000)
+    }).then(data => {   // then的参数也可以是两个函数，当请求成功(调用resolve)时 执行第一个函数
+                        // 当请求失败(调用reject)时 执行第二个函数
+      console.log(data);
+    }, err => {
+      console.log(err);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.使用setTimeout
+    // setTimeout(() => {
+    //   console.log('help me');
+    // },1000)
+    
+
+    // 什么情况下会使用Promise？ 一般情况下是有异步操作时，使用Promise对这个异步操作进行封装
+    // new -> 构造函数(1. 保存一些状态信息  2.执行传入的函数)
+    // 在执行传入的回调函数时，会传入两个参数 resolve, reject 本身又是函数
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // 请求成功时调用resolve()
+        // resolve('wdnmd')
+
+        //失败时侯调用reject
+        reject('error message')
+      }, 1000)
+    }).then((data) => {
+      // 处理请求成功时代码
+      console.log(data);
+      console.log(data);
+      console.log(data);
+      console.log(data);
+    }).catch((err) => {
+      // 处理请求失败时的代码
+      console.log(err);
+    })
+  </script>
+</body>
+</html>

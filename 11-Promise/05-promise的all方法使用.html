@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // all()方法参数是一个可迭代的对象 当作为参数的几个网络请求都完成时 执行then()里面的函数
+    Promise.all([
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('result1')
+        },1000)
+      }),
+      new Promise((reslove, reject) => {
+        setTimeout(() => {
+          reslove('result2')
+        },2000)
+      })
+    ]).then(results => {   // results是一个数组，用于保存网络请求的结果
+      console.log(results)
+    }, err => {
+      console.log(err)
+    })
+  </script>
+</body>
+</html>

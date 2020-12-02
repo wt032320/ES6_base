@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [12, 65, 56, 76, 53]
+    // 第一次 tmp: 12  item: 65 index: 1
+    // 第二次 tmp: 77  iten: 56 index: 2
+    // 第三次 tmp: 133 item: 76 index: 3
+    //  ...
+    let result = arr.reduce((tmp, item, index) => {
+      if (index === arr.length - 1) { // 最后一次
+        return (tmp + item) / arr.length
+      } else {
+        return tmp + item
+      }
+    })
+    console.log(result)
+  </script>
+</body>
+</html>
