@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+        拷贝数据：
+          基本数据类型：
+              拷贝后会生成一份新的数据， 修改拷贝以后的数据不会影响原数据
+          对象/数组：
+              拷贝后不会生成新的数据，而是拷贝的是引用。 修改拷贝以后的数据会影响原来的数据
+        拷贝数据的方法：
+          1. 直接赋值  // 浅拷贝
+          2. Object.assign() // 浅拷贝
+          3. Array.prototype.cancat() // 浅拷贝
+          4. Array.prototype.slice()  // 浅拷贝
+          5. JSON.parse(JSON.stringify()) // 深拷贝
+    */
+    // 字符串/布尔值 在相互赋值时 会在内存中会开辟新的存储空间 不同的变量会指向不同的内存空间
+    let str = 'aaa'
+    let str2 = str
+    console.log(str2) // aaa
+    str2 = ''
+    console.log(str)  // aaa
+    
+    let bool1 = true
+    let bool2 = bool1
+    bool2 = false
+    console.log(bool1) // true
+
+    // 数组/对象 在相互赋值时 不会再内存中开辟新的内存空间  被赋值的变量会指向之前的变量的存储位置
+    let obj = { name: 'liass', age: 33 }
+    let obj1 = obj
+    obj1.name = 'hanpi'
+    console.log(obj1, obj)
+
+    let arr = [1, 4, 5, 6]
+    let arr1 = arr
+    arr1[0] = 'aaa'
+    console.log(arr) // ['aaa', 4, 5, 6]
+
+  </script>
+</body>
+</html>

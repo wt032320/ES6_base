@@ -7,7 +7,11 @@
 </head>
 <body>
   <script>
-    // async 语法糖 声明在该函数中存在异步操作
+    // async Generator的语法糖 声明在该函数中存在异步操作
+    // 特点:
+    //   1. 不需要像Generator去调用next方法，遇到await等待，当前的异步操作完成就往下执行
+    //   2. 返回的总是Promise对象 可以用then方法进行下一步操作
+    //   3. async取代Generator函数的星号，await取代Generator的yield
     async function  show () {
       let a = 12
       let b = 4
@@ -17,6 +21,17 @@
       }, 3000)
     }
     show()
+
+    // await的返回值
+    // 1. await后面是普通函数时 返回值就是普通函数的返回值
+    function test() {
+      return 'xxx'
+    }
+    async function asyncPrint() {
+      let res = await test()
+      console.log(res)
+    }
+    asyncPrint()
   </script>
 </body>
 </html>

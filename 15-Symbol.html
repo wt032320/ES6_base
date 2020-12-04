@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    Symbol:
+      概念：ES6中的添加了一种原始数据类型symbol
+      特点：
+        1. Symbol属性值对应的值是唯一的，解决命名冲突的问题
+        2. Symbol值不能与其他的数据进行计算，包括同字符串拼接
+        3. for in  ,  for of 遍历时不会遍历symbol属性
+  -->
+  <script>
+    // 使用
+    // 1. 创建symbol属性值
+    let symbol = Symbol()
+    let obj = { username: 'taozi', age: 23 }
+    obj.sex = '女'
+    obj[Symbol] = 'mm'
+    console.log(obj)
+
+    // 传参标识
+    let symbol2 = Symbol('one')
+    let symbol3 = Symbol('two')
+    console.log(symbol2, symbol3)
+
+    // 可以定义常量
+    const Person_key = Symbol('Person_key')
+    console.log(Person_key)
+
+    // 内置Symbol值
+  </script>
+</body>
+</html>
